@@ -1,6 +1,71 @@
 /* ----------------------------------- *\
 			content styles
 \* ----------------------------------- */
+.view-title-box {
+    margin-bottom: 30px;
+    margin-left: 0;
+    margin-right: -30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .title-wrap {
+        flex-shrink: 0;
+        margin-bottom: 10px;
+        min-width: 200px;
+        padding-right: 30px;
+    }
+    .view-wrap {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-right: 30px;
+        .view-title {
+            font-size: 15px;
+            line-height: 1.3;
+            color: #272E33;
+            padding: 0 40px 0 0;
+            flex-shrink: 0;
+        }
+        .view-field {
+            flex-shrink: 0;
+        }
+    }
+    select.form-input {
+        height: 29px;
+        padding: 0 30px 0 11px;
+        font-size: 15px;
+        background-position: right 4px center;
+    }
+    .h1-title {
+        margin: 0;
+    }
+}
+.search-title-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -30px 10px 0;
+    .title-wrap {
+        width: 100%;
+        flex-shrink: 0;
+        margin: 0 0 10px 0;
+        padding: 0 30px 0 0;
+    }
+    .total-wrap, .action-wrap {
+        flex-shrink: 0;
+        margin: 0 0 10px 0;
+        padding: 0 30px 0 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #B3B3B3;
+        min-width: 150px;
+    }
+    .action-wrap {
+        font-weight: 400;
+    }
+    .h1-title {
+        margin: 0;
+    }
+}
 body.popup-open {
     overflow: hidden;
 }
@@ -545,7 +610,74 @@ body.popup-open {
         line-height: 22/18;
     }
     .titles-outer-wrap {
+        width: 100%;
+        min-height: 0;
+        flex-shrink: 0;
+        display: flex;
         border-bottom: 1px solid #e0e0e0;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: bold;
+        color: #484848;
+        padding-bottom: 24px;
+        align-items: flex-start;
+        .titles-title {
+            display: block;
+            flex-shrink: 0;
+            line-height: 1.6;
+        }
+        .btn-action-ico {
+            width: 26px;
+            height: 26px;
+            margin: 0;
+            &:not(:hover) {
+                opacity: 0.4;
+            }
+        }
+        .titles-title {
+            display: block;
+            flex-shrink: 0;
+        }
+        .title01 {
+            width: 58px;
+            padding-left: 15px;
+        }
+        .title02 {
+            flex: 1;
+            width: auto;
+        }
+        .title03 {
+            width: 16%;
+            text-align: center;
+        }
+        .title04 {
+            width: 14%;
+            text-align: center;
+        }
+        .title05 {
+            width: 7%;
+            text-align: center;
+            min-width: 80px;
+        }
+        .title06 {
+            width: 14%;
+            text-align: center;
+        }
+        .title07 {
+            width: 6%;
+            text-align: center;
+            min-width: 80px;
+        }
+        .title08 {
+            width: 13%;
+            text-align: center;
+        }
+        .title09 {
+            width: 40px;
+        }
+    }
+    .item-wrap {
+        margin-bottom: 15px;
     }
     .items-info-wrap {
         font-size: 15px;
@@ -1938,6 +2070,12 @@ body.popup-open {
 }
 .catalog-box {
     margin-bottom: 45px;
+    .search-result-wrap {
+        font-size: 18px;
+        line-height: 1.3;
+        color: var(--clr-title);
+        padding-top: 20px;
+    }
     .item-wrap {
         width: 100%;
     }
@@ -1952,6 +2090,11 @@ body.popup-open {
         color: #000;
         flex-shrink: 0;
         border-radius: 5px 5px 0 0;
+        &+.search-result-wrap {
+            border-top: 1px solid #e4e4e4;
+        }
+        .titles-outer-wrap {
+        }
         .titles-title {
             display: block;
             flex-shrink: 0;
@@ -2283,6 +2426,28 @@ body.popup-open {
     }
 }
 @media (max-width: 1023px) {
+    .cart-box {
+        .titles-outer-wrap {
+            .titles-title {
+                display: none;
+            }
+            .title01 {
+                width: 110px;
+                display: block;
+            }
+            .title02 {
+                flex: 1;
+                display: block;
+            }
+        }
+    }
+    .catalog-box {
+        .titles-outer-wrap {
+            &+.search-result-wrap {
+                border-top: none;
+            }
+        }
+    }
     .srt-box {
         .items-wrap {
             margin: 0 -10px;
@@ -2937,6 +3102,26 @@ body.popup-open {
     }
 }
 @media (min-width: 1024px) {
+    .view-title-box {
+        .title-wrap {
+            min-width: 0;
+            padding-right: 5.8rem;
+        }
+        .h1-title {
+            font-size: 24px;
+        }
+    }
+    .search-title-box {
+        margin-bottom: 25px;
+        .title-wrap {
+            width: auto;
+            flex-shrink: 0;
+            min-width: 0;
+        }
+        .h1-title {
+            font-size: 24px;
+        }
+    }
     .popup-box {
         overflow: visible;
         .btn-action-ico {
@@ -3028,6 +3213,12 @@ body.popup-open {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
         border-radius: 5px;
         padding: 40px 10rem;
+        .item-wrap {
+            margin: 0;
+            &:nth-child(2n) {
+                background-color: #F7F7F7;
+            }
+        }
         &:first-child {
             margin-top: 0;
         }
@@ -3536,6 +3727,7 @@ body.popup-open {
     }
 }
 @media (min-width: 1024px) and (max-width: 1199px) {
+    
     .lk-password-box {
         .form-inner-wrap {
             padding-right: 20px;
@@ -3547,6 +3739,21 @@ body.popup-open {
     .pagenav-box {
         .btn-page {
             margin: 0 8px;
+        }
+    }
+}
+@media (min-width: 1024px) and (max-width: 1399px) {
+    .cart-box {
+        .titles-outer-wrap {
+            .title01 {
+                display: none;
+            }
+            .title03 {
+                width: 120px;
+            }
+            .title06, .title08 {
+                width: 80px;
+            }
         }
     }
 }
